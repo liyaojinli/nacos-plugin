@@ -14,19 +14,21 @@
  * limitations under the License.
  */
 
-package com.alibaba.nacos.plugin.datasource.constants;
+package com.alibaba.nacos.plugin.datasource.impl.opengauss;
+
+import com.alibaba.nacos.plugin.datasource.constants.DatabaseTypeConstant;
+import com.alibaba.nacos.plugin.datasource.impl.base.BaseTenantInfoMapper;
 
 /**
- * DatabaseType Constant.
+ * The postgresql implementation of ConfigInfoAggrMapper.
  *
  * @author Long Yu
  **/
-public class DatabaseTypeConstant {
+public class TenantInfoMapperByOpengauss extends BaseTenantInfoMapper {
     
-    public static final String POSTGRESQL = "postgresql";
-    
-    public static final String MYSQL = "mysql";
-
-    public static final String OPENGAUSS ="opengauss";
+    @Override
+    public String getDataSource() {
+        return DatabaseTypeConstant.OPENGAUSS;
+    }
     
 }

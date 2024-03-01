@@ -14,19 +14,22 @@
  * limitations under the License.
  */
 
-package com.alibaba.nacos.plugin.datasource.constants;
+package com.alibaba.nacos.plugin.datasource.impl.opengauss;
+
+import com.alibaba.nacos.plugin.datasource.constants.DatabaseTypeConstant;
+import com.alibaba.nacos.plugin.datasource.impl.base.BaseTenantCapacityMapper;
 
 /**
- * DatabaseType Constant.
+ * The postgresql implementation of TenantCapacityMapper.
  *
  * @author Long Yu
  **/
-public class DatabaseTypeConstant {
+public class TenantCapacityMapperByOpengauss extends BaseTenantCapacityMapper {
     
-    public static final String POSTGRESQL = "postgresql";
+    @Override
+    public String getDataSource() {
+        return DatabaseTypeConstant.OPENGAUSS;
+    }
     
-    public static final String MYSQL = "mysql";
-
-    public static final String OPENGAUSS ="opengauss";
     
 }
